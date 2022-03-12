@@ -25,24 +25,24 @@ export default function Details(){
     return(
         <div>
             { pokemon.length > 0 ? 
-                <div className="body">
-                    <h1 className="title">Hi! I´m {pokemon[0].name}</h1>
-                    <img className="img" src={pokemon[0].img} alt='img'></img>
-                    <div >
-                        <h2>Type: {pokemon[0].type.map((type)=>(<h3>{type}</h3>))}</h2>
+                <div className="container">
+                    <div className="details_container">
+                        <div className="header">
+                            <img className="img" src={pokemon[0].img} alt='img'></img>
+                            <h2 className="title">Hi! I´m {pokemon[0].name}</h2>
+                        </div>
+
+                        <div className="description">
+                            <h2 className="title"><span>Type: </span>{pokemon[0].type.map((type)=>(<h3>{type}</h3>))}</h2>
+                            <h3 className="title"><span>Hp: </span>{pokemon[0].hp}</h3>
+                            <h3 className="title"><span>Attack: </span>{pokemon[0].attack}</h3>
+                            <h3 className="title"><span>Defense: </span>{pokemon[0].defense}</h3>
+                            <h3 className="title"><span>Speed: </span>{pokemon[0].speed}</h3>
+                            <h3 className="title"><span>Weight: </span>{pokemon[0].weight}</h3> 
+                            <h3 className="title"><span>Height: </span>{pokemon[0].height}</h3>
+                            <Link to='/Home'><button className="my_button">Back to Home</button></Link>
+                        </div>
                     </div>
-                    <div>
-                        <h3>Hp: {pokemon[0].hp}</h3>
-                        <h3>Attack: {pokemon[0].attack}</h3>
-                        <h3>Defense: {pokemon[0].defense}</h3>
-                        <h3>Speed: {pokemon[0].speed}</h3>
-                    </div>
-                    <div>
-                        <h3>Weight: {pokemon[0].weight}</h3>
-                        <h3>Height: {pokemon[0].height}</h3>
-                    </div>
-                   
-                    <Link to='/Home'><button>Back to Home</button></Link>
                 </div>
                 :  (<LoadingPage/>) 
             }

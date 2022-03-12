@@ -72,8 +72,9 @@ const ContentBox = styled.div`
 const StyledH2 = styled.h2`
     @import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
     font-family: 'Delius', cursive;
-    font-size:17px;
+    font-size:18px;
     color:#444444 ;
+    margin-bottom:47px;
     text-transform: uppercase;
     letter-spacing:1px ;
     text-shadow: 0 10px 25px rgba(5, 4, 8, 0.397);
@@ -84,6 +85,7 @@ const StyledP = styled.p`
     font-family: 'Delius', cursive;
     font-size:20px;
     color: #F7F7F7;
+    margin-top: 20px;
     top:0 ;
     letter-spacing:1px;
     line-height:12px ;

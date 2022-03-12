@@ -1,23 +1,90 @@
-.body{
-    background: #1D2B64;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #F8CDDA, #1D2B64);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #F8CDDA, #1D2B64); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
     display: flex;
-    justify-content: center;
     align-items: center;
-    flex-direction: row;
+    justify-content: center;
     height: 100vh;
+    background: #654ea3;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #eaafc8, #654ea3);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #eaafc8, #654ea3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
     font-family: 'Poppins', sans-serif;
+    padding: 0  20px;
 }
 
-.title {
-    display: inline-flex;
-    align-self:center;
-    margin-top: 20px;
+.details_container{
+    display: flex;
+    width: 600px;
+    height: auto;
+    background: rgb(243, 243, 243);
+    border-radius: 15px;
+    box-shadow: 0 0 5px #4b4b4b, 0 0 40px #4b4b4b, 0 0 80px #4b4b4b;;
 }
 
-.img{
-    display: inline-flex;
-    align-self:flex-start;
+.header{
+    border-right: 0.5px solid #ddd;
+}
+
+.description{
+    background: #ebebeb;
+    position: relative;
+    width: 100vw;
+    border-radius: 15px;
+}
+
+.header, .description{
+    padding: 20px;
+    text-align: center;
+}
+
+.header img{
+    width: 350px;
+    height: 350px;
+    margin-bottom: 20px;
+}
+
+.header h2{
+    color: rgb(32, 32, 32);
+    letter-spacing: 2px;
+    text-shadow: 0 0 2px #6b6b6b, 0 0 10px #949393, 0 0 60px #8b8a8a;
+}
+
+.title{
+    margin-right: 5px;
+    color: #4b4b4b;
+    margin-bottom: 20px;
+    font-size: 21px;
+}
+
+.my_button{
+    margin: 20px;
+    background: #ECE9E6;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding: 10px 20px;
+    color: rgba(68, 68, 69, 1.00);
+    letter-spacing: 3px;
+    font-size: 18px;
+    transition: 0.2s;
+    border-radius: 10px;
+    border: none;
+    left: 70px;
+    cursor: pointer;
+}
+
+
+.my_button:hover{
+color: black;
+box-shadow: 0 10px 15px rgba(5, 4, 8, 0.397);
+border: none;
+cursor: pointer;
+}
+
+span{
+    color:#43418b;
 }

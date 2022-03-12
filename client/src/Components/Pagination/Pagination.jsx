@@ -5,15 +5,16 @@ import styled from "styled-components";
 export default function Pagination({page, setPage}){
 
     const StyledButtons = styled.button`
-        border-radius: 20px ;
-        background-color: #595959; ;
-        margin: 20px;
+        border-radius: 50% ;
+        background-color: none;
+        font-size:30px;
+        margin: 30px;
         padding:10px ;
         border:none ;
-        color:white ;
+        color: #595959 ;
 
         &:hover{
-            background-color:#F7F7F7;
+            background-color:none;
             color: #595959;
             box-shadow: 0 0 20px #AA76EE, 0 0 40px #AA76EE, 0 0 80px #AA76EE;
             transition: 0.5s;
@@ -41,8 +42,8 @@ export default function Pagination({page, setPage}){
 
     return(
        <DivStyle>
-            <StyledButtons disabled={page === 1 || page < 1} onClick={previousPage}>izquierda</StyledButtons>
-            <StyledButtons disabled={page === 4 || page > 4} onClick={nextPage}>derecha</StyledButtons>
+            <StyledButtons disabled={page === 1 || page < 1} onClick={previousPage}>⇠</StyledButtons>
+            <StyledButtons disabled={page === 4 || page > 4} onClick={nextPage}>⇢</StyledButtons>
         </DivStyle>
     )
 }
