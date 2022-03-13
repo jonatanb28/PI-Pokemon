@@ -8,7 +8,9 @@ import './createPokemons.css'
 export default function CreatePokemon(){
 
     function Validation(input){
+        
         let error = {required: false};
+        
         if(!input.name){
             error.name = 'Please enter poke-name'
             error.required = true;
@@ -16,35 +18,36 @@ export default function CreatePokemon(){
             error.name = 'Name is invalid. It must be contain 2 to 15 characters';
             error.required = true
         }
-    
-        if(input.hp <= 0 || input.hp > 100){
-            error.hp = 'Hp value must be greater than 0 but not exceed 100 points'
+        
+        if(input.hp <= 0 || input.hp > 150){
+            error.hp = 'Hp value must be greater than 0 but not exceed 150 points'
             error.required = true
         }
         
-        if(input.attack <= 0 || input.attack > 100){
-            error.attack = 'Attack value must be greater than 0 but not exceed 100 points'
+        if(input.attack <= 0 || input.attack > 150){
+            error.attack = 'Attack value must be greater than 0 but not exceed 150 points'
             error.required = true
         }
     
-        if(input.defense <= 0 || input.defense > 100){
-            error.defense = 'Defense value must be greater than 0 but not exceed 100 points'
+        if(input.defense <= 0 || input.defense > 150){
+            error.defense = 'Defense value must be greater than 0 but not exceed 150 points'
             error.required = true
         }
     
-        if(input.speed <= 0 || input.speed > 100){
-            error.speed = 'Speed value must be greater than 0 but not exceed 100 points'
+        if(input.speed <= 0 || input.speed > 150){
+            error.speed = 'Speed value must be greater than 0 but not exceed 150 points'
             error.required = true
         }
     
-        if(input.weight <= 0 || input.weight > 100){
-            error.weight = 'Weight value must be greater than 0 but not exceed 100 points'
+        if(input.weight <= 0 || input.weight > 150){
+            error.weight = 'Weight value must be greater than 0 but not exceed 150 points'
             error.required = true
         }
-        if(input.height <= 0 || input.height > 100){
-            error.height = 'Height value must be greater than 0 but not exceed 100 points'
+        if(input.height <= 0 || input.height > 150){
+            error.height = 'Height value must be greater than 0 but not exceed 150 points'
             error.required = true
         }
+
         return error;
     }
     
@@ -122,6 +125,7 @@ export default function CreatePokemon(){
 
     
     return(
+        
         <div className="body">
             
             <h1 className="h1">Create your own pokemon!</h1>
@@ -169,16 +173,14 @@ export default function CreatePokemon(){
                 <div className="div">
                     <label className="label">Type:</label>
                     <select className="select" onChange={event=>handleSelect(event)}>
-                
                     {types &&
                         types.map((type) => {
                         return (
                             <option className="option" value={type.name} key={type.name}>
-                            {type.name}
+                                {type.name}
                             </option>
                         );
                         })}
-
                     </select>
                 </div>
 
@@ -192,6 +194,7 @@ export default function CreatePokemon(){
                     );
                   })}
                 </div>
+                
 
                 <button className="create_button" type="submit">Create Pokemon!</button>
 

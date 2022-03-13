@@ -6,6 +6,7 @@ import {Link} from 'react-router-dom';
 function Button(){
 
     const MyButton = styled.div`
+    margin-left: 40px;
         position: relative;
         display: inline-block;
         padding: 10px 20px;

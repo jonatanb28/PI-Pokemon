@@ -1,0 +1,16 @@
+
+.title_h1{
+    position: relative;
+    margin-top: 10rem;
+    font-size: 5rem;
+    color: red;
+    display: flex;
+    text-align: center;
+    background: none;
+}
+
+.gif{
+    position:relative;
+    align-self: center;
+    margin-left: 50rem;
+}

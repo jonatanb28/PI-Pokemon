@@ -7,7 +7,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 100vh;
+    height: auto;
     @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
     font-family: 'Poppins', sans-serif;
 }
@@ -18,7 +18,7 @@
     color: #212F3D ;
     text-shadow: 0 10px 25px rgba(5, 4, 8, 0.397);
     font-size: 50px;
-    
+    margin-bottom: 25px;
 }
 
 
@@ -149,7 +149,8 @@ cursor: pointer;
     border-radius: 5px;
     background-color: #E01C0A;
     color: white;
-    margin-left: 10px;
+    display: inline-block;
+    margin-top: 4px;
 }
 
 .h4{

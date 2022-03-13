@@ -19,15 +19,11 @@
 
 .details_container{
     display: flex;
-    width: 600px;
+    width: 750px;
     height: auto;
     background: rgb(243, 243, 243);
     border-radius: 15px;
     box-shadow: 0 0 5px #4b4b4b, 0 0 40px #4b4b4b, 0 0 80px #4b4b4b;;
-}
-
-.header{
-    border-right: 0.5px solid #ddd;
 }
 
 .description{
@@ -86,5 +82,10 @@ cursor: pointer;
 }
 
 span{
-    color:#43418b;
+    color:#5d4c95;
+}
+
+.p_details{
+    margin-top: 5px;
+    color: rgb(179, 75, 61);
 }

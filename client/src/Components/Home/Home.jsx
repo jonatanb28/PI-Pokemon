@@ -15,12 +15,14 @@ import {
     orderByAttack,
     filterByOrigin,
 } from "../../Actions";
+import NotFoundPage from "../NotFound/NotFoundPage.jsx";
 
 
 
 const Container = styled.div`
     background-color:#F7F7F7 ;
     height:100vh ;
+    width: auto;
 `
 
 function Home() {
@@ -113,7 +115,7 @@ function Home() {
 
             <div>
                 {copyPokemons && copyPokemons.hasOwnProperty('error') ?
-                    <h1>{copyPokemons.error}</h1>
+                    <NotFoundPage/>
                     : copyPokemons
                         .slice((page - 1) * perPage, (page - 1) * perPage + perPage)
                         .map((pokemon)=>{
@@ -121,7 +123,7 @@ function Home() {
                             <Card id={pokemon.id} key={pokemon.id} img = {pokemon.img} name = {pokemon.name} type = {pokemon.type} createInDb = {pokemon.createdInDb}/>
                         );
                     })
-                };
+                }
             </div>
 
             <Pagination page={page} setPage={setPage} pokemonsPerPage={pokemonsPerPage}/>

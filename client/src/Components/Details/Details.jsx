@@ -33,7 +33,7 @@ export default function Details(){
                         </div>
 
                         <div className="description">
-                            <h2 className="title"><span>Type: </span>{pokemon[0].type.map((type)=>(<h3>{type}</h3>))}</h2>
+                            <h2 className="title"><span>Type: </span>{pokemon[0].type.map((type)=>(<p className="p_details">{type}</p>))}</h2>
                             <h3 className="title"><span>Hp: </span>{pokemon[0].hp}</h3>
                             <h3 className="title"><span>Attack: </span>{pokemon[0].attack}</h3>
                             <h3 className="title"><span>Defense: </span>{pokemon[0].defense}</h3>

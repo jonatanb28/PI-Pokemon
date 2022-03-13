@@ -25,6 +25,7 @@ function LandingPage(){
         letter-spacing: 4px;
         color: #5F4B99;
         margin-top: 0;
+        margin-bottom:20px;
     `;
 
     const Block = styled.div`

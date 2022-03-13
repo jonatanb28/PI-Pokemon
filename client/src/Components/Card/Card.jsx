@@ -85,10 +85,10 @@ const StyledP = styled.p`
     font-family: 'Delius', cursive;
     font-size:20px;
     color: #F7F7F7;
-    margin-top: 20px;
     top:0 ;
     letter-spacing:1px;
     line-height:12px ;
+    margin-bottom: 18px;
 `
 const StyledLink = styled(Link)`
     text-decoration: none ;
