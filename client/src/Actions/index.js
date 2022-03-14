@@ -97,3 +97,13 @@ export function postPokemon(payload){
         })
     }
 }
+
+export function deletePokemon(id){
+    return async function(dispatch){
+        await axios.delete('http://localhost:3001/pokemons/' + id)
+        return dispatch({
+            type: 'deletePokemon',
+        })
+    }
+
+}

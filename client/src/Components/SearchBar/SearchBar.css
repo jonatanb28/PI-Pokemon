@@ -1,0 +1,37 @@
+.input_searchBar{
+    padding:1px 15px ;
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+    font-family: 'Poppins', sans-serif;
+    border-radius: 10px;
+    color: black;
+    font-size: 15px;
+    letter-spacing: 1.2px;
+}
+
+.input_searchBar:hover{
+    box-shadow: 0 0 20px #AA76EE, 0 0 40px #AA76EE, 0 0 80px #AA76EE;
+    transition:0.8s;
+}
+
+.button_searchBar{
+    padding:3.5px 15px ;
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+    font-family: 'Poppins', sans-serif;
+    border-radius: 10px;
+    border: none;
+    margin-left: 5px;
+    font-size: 14px;
+    letter-spacing: 1.2px;
+    color:black ;
+    background-color: #EDEDED;
+}
+
+.button_searchBar:hover{
+    color: white;
+    background-color: #474747;
+    box-shadow: 0 0 20px #F7F7F7, 0 0 40px #F7F7F7, 0 0 80px #F7F7F7;
+    transition:0.8s;
+    border: none;
+    cursor:pointer ;
+}
+

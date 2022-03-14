@@ -27,7 +27,7 @@
 }
 
 .description{
-    background: #ebebeb;
+    background: #f0f0f0;
     position: relative;
     width: 100vw;
     border-radius: 15px;
@@ -55,6 +55,7 @@
     color: #4b4b4b;
     margin-bottom: 20px;
     font-size: 21px;
+    letter-spacing: 1.5px;
 }
 
 .my_button{
@@ -88,4 +89,22 @@ span{
 .p_details{
     margin-top: 5px;
     color: rgb(179, 75, 61);
+}
+
+.delete{
+    padding: 10px;
+    background:rgb(204, 87, 71);
+    border: none;
+    color: white;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: 0.8s;
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1px;
+}
+.delete:hover{
+    background: rgb(230, 69, 48);
+    cursor: pointer;
+    box-shadow: 0 0 5px #E56256, 0 0 20px #E56256, 0 0 60px #E56256;
 }

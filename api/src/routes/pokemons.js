@@ -12,7 +12,12 @@ router.get('', async (req, res)=>{
             return res.status(200).send(pokemonName);
         } return res.send({error: 'Pokemon not found'})
     } else {
-        return res.status(200).send(totalPokemons);
+        try{
+            return res.status(200).send(totalPokemons);
+        } catch(error){
+            res.send(error)
+        }
+        
     }
 });
 
@@ -22,7 +27,7 @@ router.get('/:id', async (req, res) => {
     if(id){
         const pokemonId = await totalPokemons.filter(pokeId => pokeId.id == id);
         if(pokemonId.length){
-           return res.status(200).send(pokemonId) // siempre 1 tiene que haber, mínimamente en todos los anteriores al último
+           return res.status(200).send(pokemonId)
         } res.status(404).send('Pokemon not found please try again')
     }
 })
@@ -32,18 +37,34 @@ router.post('', async (req, res)=>{
         img, name, type, id, hp, attack, defense, speed, weight, height, createdInDb
     } = req.body;
     
-    const newPokemon = await Pokemon.create({
-        img, name, id, hp, attack, defense, speed, weight, height, createdInDb
-    });
+    try{
+        const newPokemon = await Pokemon.create({
+            img, name, id, hp, attack, defense, speed, weight, height, createdInDb
+        });
+    
+        const typeDb = await Type.findAll({
+            where: {
+                name: type
+            }
+        });
+        console.log(typeDb)
+        await newPokemon.addType(typeDb);
+        res.send('newPokemon');
+    } catch (error){
+        res.send(error);
+    }
+    
+})
 
-    const typeDb = await Type.findAll({
-        where: {
-            name: type
-        }
-    });
-    console.log(typeDb)
-    await newPokemon.addType(typeDb);
-    res.send('newPokemon')
+router.delete('/:id', async (req, res)=>{
+    try{
+       let {id} = req.params;
+       res.json(await Pokemon.destroy({
+            where: {id} 
+       }))
+    } catch(error){
+        res.send(error)
+    }
 })
 
 module.exports = router;

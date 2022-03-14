@@ -8,8 +8,7 @@ const initialState = {
     details: [],
     pokeDetails: [],
 }
-//a mi me llega un objeto de las actions con un type y un payload
-//recibe un estado y una accion. Por default se le pasa un initialState
+
 function reducer (state = initialState, {type, payload}) {
     // eslint-disable-next-line default-case
     switch(type){
@@ -41,7 +40,7 @@ function reducer (state = initialState, {type, payload}) {
             let orderArray = payload === "ascendent" ? state.copyPokemons.sort(function(a,b){
                 if(a.name > b.name) return 1;
                 if(b.name > a.name) return -1;
-                return 0; //si son iguales los deja como están 
+                return 0; 
             }) :
             state.copyPokemons.sort(function(a,b){
                 if(a.name > b.name) return -1;
@@ -63,6 +62,8 @@ function reducer (state = initialState, {type, payload}) {
             });
             return {...state, copyPokemons: orderAttackArray}
         case 'postPokemon':
+            return{...state}
+        case 'deletePokemon':
             return{...state}
         case 'Loading':{
             return {...state, loading: true}

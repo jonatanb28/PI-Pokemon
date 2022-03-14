@@ -1,26 +1,32 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 
 import React, {useEffect} from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getPokemonsById } from "../../Actions";
+import { getPokemonsById, deletePokemon } from "../../Actions";
 import { Link } from "react-router-dom";
 import LoadingPage from '../LoadingPage/LoadingPage.jsx'
 import './Details.css'
 
 
 export default function Details(){
-    console.log()
+
     const {id} = useParams();
     const dispatch = useDispatch();
+    const navigate = useNavigate()
     const pokemon = useSelector((state) => state.details);
-    
+  
     useEffect(()=>{
         dispatch(getPokemonsById(id))
         return(function cleanUp(){
             dispatch(getPokemonsById('clear'))
         }) 
     },[dispatch]);
+
+    function handleDelete(){
+        dispatch(deletePokemon(id));
+        navigate('/Home')
+    }
 
     return(
         <div>
@@ -40,6 +46,9 @@ export default function Details(){
                             <h3 className="title"><span>Speed: </span>{pokemon[0].speed}</h3>
                             <h3 className="title"><span>Weight: </span>{pokemon[0].weight}</h3> 
                             <h3 className="title"><span>Height: </span>{pokemon[0].height}</h3>
+                            {typeof pokemon[0].id === 'string' && (
+                                <button className="delete" onClick={handleDelete}>Delete Pokemon</button>
+                            )}
                             <Link to='/Home'><button className="my_button">Back to Home</button></Link>
                         </div>
                     </div>
