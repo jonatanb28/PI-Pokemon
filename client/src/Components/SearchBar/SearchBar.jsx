@@ -8,7 +8,6 @@ export default function SearchBar(){
 
     const dispatch = useDispatch();
     const [state, setState] = useState('');
-    console.log(state)
 
     function handleChange(event){
         event.preventDefault()
