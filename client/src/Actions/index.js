@@ -5,7 +5,7 @@ import axios from 'axios';
 export function getAllPokemons(){
     return async function (dispatch){
         dispatch({type:'Loading'})
-        let json = await axios('http://localhost:3001/pokemons')
+        let json = await axios('/pokemons')
         return dispatch({
             type: 'getPokemons',
             payload: json.data
@@ -23,7 +23,7 @@ export function getAllPokemons(){
 
 export function getAllTypes(){
     return async function (dispatch){
-        let json = await axios ('http://localhost:3001/types')
+        let json = await axios ('/types')
         return dispatch({
             type: 'getTypes',
             payload: json.data
@@ -34,7 +34,7 @@ export function getAllTypes(){
 export function getPokemonsByName(name){
     return async function(dispatch){
         dispatch({type: 'Loading'})
-        let json = await axios ('http://localhost:3001/pokemons?name=' + name)
+        let json = await axios ('/pokemons?name=' + name)
         return dispatch({
             type: 'getPokemonsByName',
             payload: json.data
@@ -49,7 +49,7 @@ export function getPokemonsById(id){
             payload: 'clear'})
         } else{
             dispatch({type: 'Loading'})
-        let json = await axios ('http://localhost:3001/pokemons/' + id)
+        let json = await axios ('/pokemons/' + id)
         return dispatch({
             type: 'getPokemonsById',
             payload: json.data
@@ -90,7 +90,7 @@ export function orderByAttack(payload){
 
 export function postPokemon(payload){
     return async function(dispatch){
-        const pokemon = await axios.post('http://localhost:3001/pokemons', payload)
+        const pokemon = await axios.post('/pokemons', payload)
         return dispatch({
             type: 'postPokemon',
             payload: pokemon
@@ -101,7 +101,7 @@ export function postPokemon(payload){
 
 export function deletePokemon(id){
     return async function(dispatch){
-        await axios.delete('http://localhost:3001/pokemons/' + id)
+        await axios.delete('/pokemons/' + id)
         return dispatch({
             type: 'deletePokemon',
         })
