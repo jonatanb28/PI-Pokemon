@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { postPokemon, getAllTypes } from "../../Actions";
@@ -10,7 +11,7 @@ export default function CreatePokemon(){
     function Validation(input){
         
         let error = {required: false};
-        
+        console.log(error)
         if(!input.name){
             error.name = 'Please enter poke-name'
             error.required = true;
@@ -47,7 +48,7 @@ export default function CreatePokemon(){
             error.height = 'Height value must be greater than 0 but not exceed 150 points'
             error.required = true
         }
-
+        
         return error;
     }
     
@@ -82,9 +83,17 @@ export default function CreatePokemon(){
 
     function handleSelect(event){
         setInput({
-            ...input, type: [...input.type, event.target.value] //va agregando en un arreglo todo lo que voy seleccionando 
+            ...input, type: [...input.type, event.target.value] 
         })
+        let objError = Validation({...input, [event.target.name] : event.target.value})
+        setError(objError)
     }
+
+    useEffect(()=>{
+        if(input.type.length === 0){
+            setError({...error, required: true, type: 'Please choose at least one type'})
+        } 
+    }, [input.type, error.required])
 
     function handleSubmit(event){
         if(error.required){
@@ -182,12 +191,13 @@ export default function CreatePokemon(){
                         );
                         })}
                     </select>
+                    {!error.type ? null : (<span className="span">{error.type}</span>)}
                 </div>
 
                 <div className="div">
                   {input.type.map((el) => {
                     return (
-                        <div className="div_types">
+                        <div className="div_types" key={el}>
                             <h4 className="h4">{el}</h4>
                             <button className="x_button" onClick={() => {handleDelete(el)}}>x</button>
                         </div>

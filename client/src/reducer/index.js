@@ -35,7 +35,7 @@ function reducer (state = initialState, {type, payload}) {
         case 'filterByOrigin':
             const allPokemonsArray = state.allPokemons;
             const filterOrigin = payload === 'createdInDb' ? allPokemonsArray.filter(pokemon => pokemon.createdInDb) : allPokemonsArray.filter(pokemon=> !pokemon.createdInDb)
-            return {...state, copyPokemons: payload === 'All' ? state.copyPokemons : filterOrigin}
+            return {...state, copyPokemons: payload === 'All' ? allPokemonsArray : filterOrigin}
         case 'orderByName':
             let orderArray = payload === "ascendent" ? state.copyPokemons.sort(function(a,b){
                 if(a.name > b.name) return 1;
