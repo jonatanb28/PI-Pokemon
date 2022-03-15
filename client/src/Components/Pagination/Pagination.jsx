@@ -30,7 +30,19 @@ export default function Pagination({page, setPage, pokemonsPerPage}){
         position:relative ;
         bottom:-4rem ;
         left:60rem ;
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+        font-family: 'Poppins', sans-serif;
     `
+
+    const InputPagination = styled.input`
+    background: none;
+    border: none;
+    border-radius: 10px;
+    padding: 2px 0px;
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+    font-family: 'Poppins', sans-serif;
+    `
+
     const [input, setInput] = useState(1)
 
     function nextPage(){
@@ -42,11 +54,12 @@ export default function Pagination({page, setPage, pokemonsPerPage}){
         setInput (input - 1)
         setPage (page - 1);
     }
+    
 
     return(
        <DivStyle>
             <StyledButtons disabled={page === 1 || page < 1} onClick={previousPage}>⇠</StyledButtons>
-            <input name='page' autoComplete="off" type="text" value={input}/>
+            <InputPagination name='page' autoComplete="off" type="text" value={input}/>
             <p>de {pokemonsPerPage}</p>
             <StyledButtons disabled={page === 4 || page > 4} onClick={nextPage}>⇢</StyledButtons>
         </DivStyle>
