@@ -13,14 +13,6 @@ export function getAllPokemons(){
     }
 }
 
-// export function getPokemons(){
-//     return function(dispatch){
-//         return fetch('http://localhost:3001/pokemons')
-//             .then(response => response.json())
-//             .then(pokemons => dispatch => ({type: 'GET_POKEMONS', payload: pokemons}))
-//     }
-// } 
-
 export function getAllTypes(){
     return async function (dispatch){
         let json = await axios ('/types')

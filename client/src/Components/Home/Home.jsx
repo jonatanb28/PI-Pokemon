@@ -41,13 +41,13 @@ function Home() {
     const pokemonsPerPage = Math.ceil(max)
     
     
-    //carga de pokemons y types
+    
     useEffect(()=>{
         dispatch(getAllPokemons())
         dispatch(getAllTypes())
     },[dispatch]);
 
-    //ordenamiento y filtrado:
+    
     const [order, setOrder] = useState('') 
     
     function handleSort(event){

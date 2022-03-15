@@ -38,7 +38,10 @@ export default function Pagination({page, setPage, pokemonsPerPage}){
     background: none;
     border: none;
     border-radius: 10px;
-    padding: 2px 0px;
+    width: 17px;
+    margin-right: 2px;
+    margin-top: 2px;
+    font-size: 15px;
     @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
     font-family: 'Poppins', sans-serif;
     `
