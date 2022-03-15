@@ -16,10 +16,9 @@ function App() {
       <Routes>
         <Route path='/' element={<LandingPage />}/>
         <Route path='/Home' element={<Home/>}/>
-        <Route path='*' element={<NotFoundPage/>}></Route>
+        <Route path='/Home' element={<NotFoundPage/>}></Route>
         <Route exact path='/CreatePokemon' element={<CreatePokemon/>}/>
         <Route exact path='/Home/:id' element={<Details/>}></Route>
-
       </Routes>
     </BrowserRouter>
     

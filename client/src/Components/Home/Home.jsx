@@ -94,8 +94,6 @@ function Home() {
             <div>
                 <LoadingPage/>
             </div>
-
-            <Pagination page={page} setPage={setPage} pokemonsPerPage={pokemonsPerPage}/>
             
         </Container>
     ) 
