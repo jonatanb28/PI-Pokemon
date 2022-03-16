@@ -6,6 +6,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import './createPokemons.css'
 
 
+
 export default function CreatePokemon(){
 
     function Validation(input){
@@ -74,7 +75,7 @@ export default function CreatePokemon(){
 
     function handleChange(event){
         setInput({
-            ...input, [event.target.name]:event.target.value //el e.target.name identidica el input que se está cambiando y le agrega el valor
+            ...input, [event.target.name]:event.target.value 
         })
         
         let objError = Validation({...input, [event.target.name] : event.target.value})

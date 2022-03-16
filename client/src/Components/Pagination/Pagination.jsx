@@ -29,7 +29,7 @@ export default function Pagination({page, setPage, pokemonsPerPage}){
         align-items:center ;
         position:relative ;
         bottom:-4rem ;
-        left:60rem ;
+        left:57.5rem ;
         @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
         font-family: 'Poppins', sans-serif;
     `
