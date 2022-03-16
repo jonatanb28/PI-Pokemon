@@ -13,7 +13,7 @@ function reducer (state = initialState, {type, payload}) {
     // eslint-disable-next-line default-case
     switch(type){
         case 'getPokemons':
-            return{...state, allPokemons: payload, copyPokemons: payload, loading: false}//el ...state tiene que estar si o si porque es la copia del estado anterior
+            return{...state, allPokemons: payload, copyPokemons: payload, loading: false}
         case 'getTypes':
             return{...state, types: payload}
         case 'getPokemonsByName':

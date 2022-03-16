@@ -5,7 +5,7 @@ const getDbPokemonInfo = async()=>{
         include: {
             model: Type,
             as: 'type',
-            atributes: ['name'], //el name del type, el id lo trae solo.
+            atributes: ['name'], 
             through: {
                 atributes: []
             }

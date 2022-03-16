@@ -27,8 +27,12 @@ router.get('/:id', async (req, res) => {
     if(id){
         const pokemonId = await totalPokemons.filter(pokeId => pokeId.id == id);
         if(pokemonId.length){
-           return res.status(200).send(pokemonId)
-        } res.status(404).send('Pokemon not found please try again')
+            try{
+                return res.status(200).send(pokemonId)
+            } catch(error){
+                res.send(error)
+            }
+        }
     }
 })
 

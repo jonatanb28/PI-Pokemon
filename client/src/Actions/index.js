@@ -2,16 +2,29 @@
 /* eslint-disable no-restricted-globals */
 import axios from 'axios';
 
+// export function getAllPokemons(){
+//     return async function (dispatch){
+//         dispatch({type:'Loading'})
+//         let json = await axios('/pokemons')
+//         return dispatch({
+//             type: 'getPokemons',
+//             payload: json.data
+//         })
+//     }
+// }
+
 export function getAllPokemons(){
-    return async function (dispatch){
+    return function (dispatch){
         dispatch({type:'Loading'})
-        let json = await axios('/pokemons')
-        return dispatch({
+        return axios('/pokemons')
+        .then((res) => dispatch  ({
             type: 'getPokemons',
-            payload: json.data
-        })
+            payload: res.data
+        }))
+       
     }
 }
+
 
 export function getAllTypes(){
     return async function (dispatch){
