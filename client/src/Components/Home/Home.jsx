@@ -28,7 +28,6 @@ const Container = styled.div`
 function Home() {
     
     const dispatch = useDispatch();
-    const allPokemons =  useSelector(state => state.allPokemons);
     const allTypes =  useSelector(state => state.types);
     const loading =  useSelector(state => state.loading);
     const copyPokemons =  useSelector(state => state.copyPokemons);

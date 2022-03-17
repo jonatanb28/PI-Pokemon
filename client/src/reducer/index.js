@@ -28,7 +28,7 @@ function reducer (state = initialState, {type, payload}) {
                 for(let type of pokemon.type){
                     if(payload === type){
                         return pokemon
-                    }
+                    } 
                 }
             });
             return{...state, copyPokemons: typesFilter}

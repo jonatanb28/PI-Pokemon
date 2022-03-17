@@ -14,14 +14,13 @@ import axios from 'axios';
 // }
 
 export function getAllPokemons(){
-    return function (dispatch){
+    return async function(dispatch){
         dispatch({type:'Loading'})
-        return axios('/pokemons')
-        .then((res) => dispatch  ({
+        let json = await axios('/pokemons')
+        return dispatch({
             type: 'getPokemons',
-            payload: res.data
-        }))
-       
+            payload: json.data
+        })
     }
 }
 

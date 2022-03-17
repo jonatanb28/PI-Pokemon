@@ -97,7 +97,8 @@ export default function({allTypes, handleSort, handleOrderByAttack, handleOrigin
                     </Select>
 
                     
-                    <Select onChange={event => handleOrderByAttack(event)}>
+                    <Select defaultValue ='attack' onChange={event => handleOrderByAttack(event)}>
+                        <option value="attack" disabled>Attack</option>
                         <Options value="ascendent">Low Attack</Options> 
                         <Options value="descendent">Top Attack</Options> 
                     </Select>
@@ -105,15 +106,17 @@ export default function({allTypes, handleSort, handleOrderByAttack, handleOrigin
                 
                 <div>
                     <Par>Filter by: </Par>
-                    <Select onChange={event => handleOrigin(event)}>
-                        <Options value="All">Created In</Options>    
+                    <Select defaultValue ='Origin' onChange={event => handleOrigin(event)}>
+                        <option value="Origin" disabled>Created In</option>
+                        <Options value="All">All</Options>    
                         <Options value="api">Api</Options> 
                         <Options value="createdInDb">Data Base</Options> 
                     </Select>
                 
 
-                    <Select onChange={event => handleFilterByType(event)}>   
-                        <Options value="all">Types</Options>
+                    <Select  defaultValue ='Types' onChange={event => handleFilterByType(event)}>   
+                        <option value="Types" disabled>Types</option>
+                        <Options value="all">All Types</Options>
                             {allTypes && allTypes.map((t) => (
                             <Options value={t.name} key={t.name}>{t.name}</Options>))}
                     </Select>
