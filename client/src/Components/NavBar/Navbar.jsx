@@ -107,8 +107,7 @@ export default function({allTypes, handleSort, handleOrderByAttack, handleOrigin
                 <div>
                     <Par>Filter by: </Par>
                     <Select defaultValue ='Origin' onChange={event => handleOrigin(event)}>
-                        <option value="Origin" disabled>Created In</option>
-                        <Options value="All">All</Options>    
+                        <Options value="All">Created In</Options>    
                         <Options value="api">Api</Options> 
                         <Options value="createdInDb">Data Base</Options> 
                     </Select>
