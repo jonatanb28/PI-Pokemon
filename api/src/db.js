@@ -31,7 +31,7 @@ let sequelize =
         ssl: true,
       })
     : new Sequelize(
-        `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/pokemon`,
+        `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/d60lioff21nd0f`,
         { logging: false, native: false }
       );
 

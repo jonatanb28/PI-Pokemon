@@ -123,7 +123,8 @@ function Home() {
                 }
             </div>
 
-            <Pagination page={page} setPage={setPage} pokemonsPerPage={pokemonsPerPage}/>
+            {copyPokemons && copyPokemons.hasOwnProperty('error') ? null : <Pagination page={page} setPage={setPage} pokemonsPerPage={pokemonsPerPage}/>}
+            
             
         </Container>
     )

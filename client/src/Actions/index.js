@@ -2,17 +2,6 @@
 /* eslint-disable no-restricted-globals */
 import axios from 'axios';
 
-// export function getAllPokemons(){
-//     return async function (dispatch){
-//         dispatch({type:'Loading'})
-//         let json = await axios('/pokemons')
-//         return dispatch({
-//             type: 'getPokemons',
-//             payload: json.data
-//         })
-//     }
-// }
-
 export function getAllPokemons(){
     return async function(dispatch){
         dispatch({type:'Loading'})

@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^12.2.2",
     "axios": "^0.26.0",
     "dotenv": "^16.0.0",
+    "nodemon": "^2.0.15",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-dotenv": "^0.1.3",
