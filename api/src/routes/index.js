@@ -3,8 +3,8 @@ const router = Router();
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
 
-const pokemons = require ('./pokemons');
-const type = require ('./types');
+const pokemons = require ('./pokemons.js');
+const type = require ('./types.js');
 
 
 // Configurar los routers
