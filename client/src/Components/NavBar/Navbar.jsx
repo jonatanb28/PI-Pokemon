@@ -4,7 +4,7 @@ import SearchBar from "../SearchBar/SearchBar.jsx";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-const Container = styled.div`
+const ContainerNav = styled.div`
     width:100vw;
     height:45px ;
     background: #332b24a0;  /* fallback for old browsers */
@@ -20,7 +20,7 @@ const Container = styled.div`
     box-shadow: 0 5px 30px rgba(128, 95, 185, 1);
 `
 
-const Select = styled.select`
+const SelectNav = styled.select`
     border: none ;
     padding:3px 15px ;
     border-radius:10px ;
@@ -41,14 +41,14 @@ const Select = styled.select`
     }
 `
 
-const Options = styled.option`
+const OptionsNav = styled.option`
     background-color:#413A44;
     color:#dadada;
     @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
     font-family: 'Poppins', sans-serif;
 `
 
-const StyledButton = styled.button`
+const StyledButtonNav = styled.button`
     @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
     font-family: 'Poppins', sans-serif; 
     border-radius:10px ;
@@ -69,7 +69,7 @@ const StyledButton = styled.button`
         }
 
 `
-const Par = styled.label`
+const ParNav = styled.label`
     color: white;
     display:inline;
     margin-right:10px;
@@ -83,49 +83,49 @@ export default function({allTypes, handleSort, handleOrderByAttack, handleOrigin
     return(
 
         <nav>
-            <Container>
+            <ContainerNav>
 
                 <div>
                     <SearchBar/>
                 </div>
             
                 <div>
-                    <Par>Order by: </Par>
-                    <Select onChange={event => handleSort(event)}>  
-                        <Options value="ascendent">Aa to Zz</Options> 
-                        <Options value="descendent">Zz to Aa</Options> 
-                    </Select>
+                    <ParNav>Order by: </ParNav>
+                    <SelectNav onChange={event => handleSort(event)}>  
+                        <OptionsNav value="ascendent">Aa to Zz</OptionsNav> 
+                        <OptionsNav value="descendent">Zz to Aa</OptionsNav> 
+                    </SelectNav>
 
                     
-                    <Select defaultValue ='attack' onChange={event => handleOrderByAttack(event)}>
-                        <option value="attack" disabled>Attack</option>
-                        <Options value="ascendent">Low Attack</Options> 
-                        <Options value="descendent">Top Attack</Options> 
-                    </Select>
+                    <SelectNav defaultValue ='attack' onChange={event => handleOrderByAttack(event)}>
+                        <optionNav value="attack" disabled>Attack</optionNav>
+                        <OptionsNav value="ascendent">Low Attack</OptionsNav> 
+                        <OptionsNav value="descendent">Top Attack</OptionsNav> 
+                    </SelectNav>
                 </div>
                 
                 <div>
-                    <Par>Filter by: </Par>
-                    <Select defaultValue ='Origin' onChange={event => handleOrigin(event)}>
-                        <Options value="All">Created In</Options>    
-                        <Options value="api">Api</Options> 
-                        <Options value="createdInDb">Data Base</Options> 
-                    </Select>
+                    <ParNav>Filter by: </ParNav>
+                    <SelectNav defaultValue ='Origin' onChange={event => handleOrigin(event)}>
+                        <OptionsNav value="All">Created In</OptionsNav>    
+                        <OptionsNav value="api">Api</OptionsNav> 
+                        <OptionsNav value="createdInDb">Data Base</OptionsNav> 
+                    </SelectNav>
                 
 
-                    <Select  defaultValue ='Types' onChange={event => handleFilterByType(event)}>   
-                        <option value="Types" disabled>Types</option>
-                        <Options value="all">All Types</Options>
+                    <SelectNav  defaultValue ='Types' onChange={event => handleFilterByType(event)}>   
+                        <optionNav value="Types" disabled>Types</optionNav>
+                        <OptionsNav value="all">All Types</OptionsNav>
                             {allTypes && allTypes.map((t) => (
-                            <Options value={t.name} key={t.name}>{t.name}</Options>))}
-                    </Select>
+                            <OptionsNav value={t.name} key={t.name}>{t.name}</OptionsNav>))}
+                    </SelectNav>
                 </div>
 
                 <div>
-                    <Link to='/CreatePokemon'><StyledButton>Create Pokemon</StyledButton></Link>
+                    <Link to='/CreatePokemon'><StyledButtonNav>Create Pokemon</StyledButtonNav></Link>
                 </div>
            
-            </Container>
+            </ContainerNav>
         </nav>
         
     )
