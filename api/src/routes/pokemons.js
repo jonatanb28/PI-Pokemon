@@ -3,10 +3,6 @@ const {getAllPokemons} = require("./Models/getAllPokemons");
 const { Pokemon, Type } = require("../db");
 
 
-router.get('/text', async (req, res)=>{
-    res.send('hola')
-})
-
 router.get('', async (req, res)=>{
     const {name} = req.query; 
     const totalPokemons = await getAllPokemons();
