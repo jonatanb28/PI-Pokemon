@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import styled from "styled-components";
+import './Home.css'
 import {useState, useEffect} from "react";
 import {useDispatch, useSelector} from 'react-redux';
 import Card from '../Card/Card.jsx'
@@ -17,13 +17,6 @@ import {
 } from "../../Actions";
 import NotFoundPage from "../NotFound/NotFoundPage.jsx";
 
-
-
-const HomeContainer = styled.div`
-    background-color:#F7F7F7 ;
-    height:100vh ;
-    width: auto;
-`
 
 function Home() {
     
@@ -78,7 +71,7 @@ function Home() {
 
     if(loading){
         return (    
-        <HomeContainer> 
+        <div className="home_container"> 
             <div>
                 <Navbar
                     allTypes={allTypes}
@@ -94,11 +87,11 @@ function Home() {
                 <LoadingPage/>
             </div>
             
-        </HomeContainer>
+        </div>
     ) 
 } else {
     return(
-        <HomeContainer> 
+        <div className="home_container"> 
             <div>
                 <Navbar
                     allTypes={allTypes}
@@ -126,7 +119,7 @@ function Home() {
             {copyPokemons && copyPokemons.hasOwnProperty('error') ? null : <Pagination page={page} setPage={setPage} pokemonsPerPage={pokemonsPerPage}/>}
             
             
-        </HomeContainer>
+        </div>
     )
 }}
 
