@@ -8,7 +8,7 @@
     color: #dadada;
     margin-right:20px;
     @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;  
 }
 
 .select_navbar:hover{
@@ -39,7 +39,7 @@
     background-color:#413A44;
     color:#dadada;
     @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;  
 }
 
 .navbar_label{
@@ -47,13 +47,13 @@
     display:inline;
     margin-right:10px;
     @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;  
     letter-spacing: 2px;
 }
 
 .navbar_button{
     @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-    font-family: 'Poppins', sans-serif; 
+    font-family: 'Poppins', sans-serif;  
     border-radius:10px ;
     background-color:#F7F7F7 ;
     border:none ;
