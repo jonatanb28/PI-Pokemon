@@ -10,7 +10,7 @@ function LandingPage(){
     
 
 
-    const Container = styled.div`
+    const ContainerLand = styled.div`
         @import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
         font-family: 'Delius', cursive;;
         height: 100vh;
@@ -20,7 +20,7 @@ function LandingPage(){
         background-size: cover;
     `;
 
-    const H1 = styled.h1`
+    const H1Land = styled.h1`
         font-size: 55px;
         letter-spacing: 4px;
         color: #5F4B99;
@@ -28,7 +28,7 @@ function LandingPage(){
         margin-bottom:20px;
     `;
 
-    const Block = styled.div`
+    const BlockLand = styled.div`
         margin-left: 60px;
         position: relative;
         top: 170px;
@@ -36,12 +36,12 @@ function LandingPage(){
 
     return (
         
-        <Container>
-            <Block>
-                <H1>Ready for the <br/>pokexperience?</H1>
+        <ContainerLand>
+            <BlockLand>
+                <H1Land>Ready for the <br/>pokexperience?</H1Land>
                 <Button/>
-            </Block>
-        </Container>
+            </BlockLand>
+        </ContainerLand>
     )
 }
 

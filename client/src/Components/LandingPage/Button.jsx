@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 
 function Button(){
 
-    const MyButton = styled.div`
+    const MyButtonLand = styled.div`
     margin-left: 40px;
         position: relative;
         display: inline-block;
@@ -31,7 +31,7 @@ function Button(){
 
     `;
 
-    const StyledLink = styled(Link)`
+    const StyledLinkLand = styled(Link)`
         text-decoration:none;
         color: #dadada ;
 
@@ -43,9 +43,9 @@ function Button(){
     return(
         
         
-        <MyButton>
-            <StyledLink to='/Home'>Start</StyledLink>
-        </MyButton>
+        <MyButtonLand>
+            <StyledLinkLand to='/Home'>Start</StyledLinkLand>
+        </MyButtonLand>
         
     )  
        
