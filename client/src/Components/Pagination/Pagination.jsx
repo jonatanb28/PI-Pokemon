@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 export default function Pagination({page, setPage, pokemonsPerPage}){
 
-    const StyledButtons = styled.button`
+    const StyledButtonsPag = styled.button`
         border-radius: 50% ;
         background-color: none;
         font-size:30px;
@@ -24,7 +24,7 @@ export default function Pagination({page, setPage, pokemonsPerPage}){
 
     `
 
-    const DivStyle = styled.div`
+    const DivStylePag = styled.div`
         display:flex ;
         align-items:center ;
         position:relative ;
@@ -34,7 +34,7 @@ export default function Pagination({page, setPage, pokemonsPerPage}){
         font-family: 'Poppins', sans-serif;
     `
 
-    const InputPagination = styled.input`
+    const InputPaginationPag = styled.input`
     background: none;
     border: none;
     border-radius: 10px;
@@ -60,11 +60,11 @@ export default function Pagination({page, setPage, pokemonsPerPage}){
     
 
     return(
-       <DivStyle>
-            <StyledButtons disabled={page === 1 || page < 1} onClick={previousPage}>⇠</StyledButtons>
-            <InputPagination name='page' autoComplete="off" type="text" value={input}/>
+       <DivStylePag>
+            <StyledButtonsPag disabled={page === 1 || page < 1} onClick={previousPage}>⇠</StyledButtonsPag>
+            <InputPaginationPag name='page' autoComplete="off" type="text" value={input}/>
             <p>de {pokemonsPerPage}</p>
-            <StyledButtons disabled={page === 4 || page > 4} onClick={nextPage}>⇢</StyledButtons>
-        </DivStyle>
+            <StyledButtonsPag disabled={page === 4 || page > 4} onClick={nextPage}>⇢</StyledButtonsPag>
+        </DivStylePag>
     )
 }
