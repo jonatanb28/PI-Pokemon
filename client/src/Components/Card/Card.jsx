@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 
 
-const Container = styled.div`
+const ContainerCard= styled.div`
     top:5rem ;
     display:inline-block ;
     margin: 15px ;
@@ -42,7 +42,7 @@ const Container = styled.div`
     
 `
 
-const ImgBox = styled.div`
+const ImgBoxCard = styled.div`
     position:relative ;
     width:100% ;
     display:flex ;
@@ -51,7 +51,7 @@ const ImgBox = styled.div`
     padding-top:20px ;
     z-index: 1;
 `
-const StyledImg = styled.img`
+const StyledImgCard = styled.img`
     max-width:90%;
     transition:0.8s;
 
@@ -60,7 +60,7 @@ const StyledImg = styled.img`
         max-width:65%;
     }
 `
-const ContentBox = styled.div`
+const ContentBoxCard = styled.div`
     position:relative;
     padding:20px;
     display: flex;
@@ -70,7 +70,7 @@ const ContentBox = styled.div`
     z-index:1 ;
 `
 
-const StyledH2 = styled.h2`
+const StyledH2Card = styled.h2`
     @import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
     font-family: 'Delius', cursive;
     font-size:18px;
@@ -81,7 +81,7 @@ const StyledH2 = styled.h2`
     text-shadow: 0 10px 25px rgba(5, 4, 8, 0.397);
 `
 
-const StyledP = styled.p`
+const StyledPCard = styled.p`
     @import url('https://fonts.googleapis.com/css2?family=Delius&display=swap" rel="stylesheet');
     font-family: 'Delius', cursive;
     font-size:20px;
@@ -91,7 +91,7 @@ const StyledP = styled.p`
     line-height:12px ;
     margin-bottom: 18px;
 `
-const StyledLink = styled(Link)`
+const StyledLinkCard = styled(Link)`
     text-decoration: none ;
 `
 // eslint-disable-next-line import/no-anonymous-default-export
@@ -99,25 +99,25 @@ export default function Card({img, name, type, id}){
     
     let key = 1;
     return(
-        <StyledLink to={`/Home/${id}`}>
-            <Container>
+        <StyledLinkCard to={`/Home/${id}`}>
+            <ContainerCard>
                 
-                <ImgBox>
-                    <StyledImg src={img} alt="not found"/>
-                </ImgBox> 
+                <ImgBoxCard>
+                    <StyledImgCard src={img} alt="not found"/>
+                </ImgBoxCard> 
                
                 
                 
-                <ContentBox>
-                    <StyledH2>{name}</StyledH2> 
+                <ContentBoxCard>
+                    <StyledH2Card>{name}</StyledH2Card> 
                         {type.map((type)=>(
-                            <StyledP key= {++key}>{type}</StyledP>
+                            <StyledPCard key= {++key}>{type}</StyledPCard>
                         ))}
-                </ContentBox> 
+                </ContentBoxCard> 
                 
                 
-            </Container>
-        </StyledLink>
+            </ContainerCard>
+        </StyledLinkCard>
        
     )
 }
