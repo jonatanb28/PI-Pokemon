@@ -3,13 +3,13 @@ import styled from "styled-components";
 import Loading from './img/Loading.gif'
 
 
-const Container = styled.div`
+const ContainerLanding = styled.div`
         @import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
         font-family: 'Delius', cursive;;
         height: 100vh;
         width: 100%;
     `;
-const Img = styled.img`
+const ImgLanding = styled.img`
     width: 675px;
     height: 200px;
     position: relative;
@@ -19,8 +19,8 @@ const Img = styled.img`
 
 export default function LoadingPage(){
     return(
-        <Container>
-            <Img src={Loading} alt="gif" />
-        </Container>
+        <ContainerLanding>
+            <ImgLanding src={Loading} alt="gif" />
+        </ContainerLanding>
     );
 }
