@@ -19,7 +19,7 @@ import NotFoundPage from "../NotFound/NotFoundPage.jsx";
 
 
 
-const ContainerHome = styled.div`
+const HomeContainer = styled.div`
     background-color:#F7F7F7 ;
     height:100vh ;
     width: auto;
@@ -78,7 +78,7 @@ function Home() {
 
     if(loading){
         return (    
-        <ContainerHome> 
+        <HomeContainer> 
             <div>
                 <Navbar
                     allTypes={allTypes}
@@ -94,11 +94,11 @@ function Home() {
                 <LoadingPage/>
             </div>
             
-        </ContainerHome>
+        </HomeContainer>
     ) 
 } else {
     return(
-        <ContainerHome> 
+        <HomeContainer> 
             <div>
                 <Navbar
                     allTypes={allTypes}
@@ -126,7 +126,7 @@ function Home() {
             {copyPokemons && copyPokemons.hasOwnProperty('error') ? null : <Pagination page={page} setPage={setPage} pokemonsPerPage={pokemonsPerPage}/>}
             
             
-        </ContainerHome>
+        </HomeContainer>
     )
 }}
 
